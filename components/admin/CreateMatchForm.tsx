@@ -131,7 +131,7 @@ export const CreateMatchForm: React.FC<CreateMatchFormProps> = ({ onCreated }) =
                 <button
                     type="submit"
                     disabled={isSubmitting || !isFormValid}
-                    className="px-6 py-2 bg-brand-blue text-black font-bold rounded-full border-2 border-black hover:bg-blue-200 transition disabled:opacity-50"
+                    className="px-6 py-2 bg-brand-blue text-black font-bold rounded-full border-2 border-black hover:bg-blue-200 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {isSubmitting ? 'Creating…' : 'Create Match'}
                 </button>
