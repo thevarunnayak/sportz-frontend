@@ -42,10 +42,13 @@ const Home: React.FC = () => {
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header Section */}
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-brand-yellow border-2 border-black rounded-2xl p-6 shadow-hard">
+            <div className="flex justify-start items-center gap-4">
+            <img src="/assets/sportz-logo.png" className="h-16 w-auto" />
           <div>
             <h1 className="text-3xl font-black tracking-tight text-brand-dark mb-1">Spotrz</h1>
             <p className="text-sm font-medium opacity-80">Real-time match scores in one place</p>
           </div>
+            </div>
           <div className="flex flex-col items-end gap-2">
             <StatusIndicator status={status} />
             {wsError && (
