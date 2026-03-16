@@ -44,7 +44,7 @@ const Home: React.FC = () => {
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-brand-yellow border-2 border-black rounded-2xl p-6 shadow-hard">
           <div>
             <h1 className="text-3xl font-black tracking-tight text-brand-dark mb-1">Spotrz</h1>
-            <p className="text-sm font-medium opacity-80">Real-time match data demo</p>
+            <p className="text-sm font-medium opacity-80">Real-time match scores in one place</p>
           </div>
           <div className="flex flex-col items-end gap-2">
             <StatusIndicator status={status} />
@@ -62,9 +62,6 @@ const Home: React.FC = () => {
           <main className="lg:col-span-2 space-y-6">
             <div className="flex items-center justify-between">
               <h2 className="text-xl font-bold border-l-4 border-brand-blue pl-3">Current Matches</h2>
-              <span className="text-xs font-mono bg-black text-white px-2 py-1 rounded">
-                API: {isLoading ? '...' : matches.length}
-              </span>
             </div>
             {newMatchesCount > 0 && (
               <div className="flex items-center justify-between gap-3 bg-brand-yellow border-2 border-black rounded-xl px-4 py-3 shadow-hard-sm">
@@ -182,7 +179,7 @@ const Home: React.FC = () => {
         </div>
 
         {/* Documentation / Verification Section */}
-        <section className="mt-12 border-t-2 border-gray-200 pt-8">
+        {/* <section className="mt-12 border-t-2 border-gray-200 pt-8">
           <div className="bg-white border-2 border-black rounded-2xl p-6">
             <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
               <span className="bg-black text-white w-6 h-6 flex items-center justify-center rounded-full text-xs">?</span>
@@ -211,7 +208,7 @@ const Home: React.FC = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );
