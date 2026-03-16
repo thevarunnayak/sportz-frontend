@@ -14,7 +14,14 @@ export const CreateMatchForm: React.FC<CreateMatchFormProps> = ({ onCreated }) =
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState<string | null>(null);
-
+    
+    const isFormValid =
+        sport.trim() !== '' &&
+        homeTeam.trim() !== '' &&
+        awayTeam.trim() !== '' &&
+        startTime !== '' &&
+        endTime !== '';
+    
     const submit = async (event: React.FormEvent) => {
         event.preventDefault();
         setError(null);
@@ -110,7 +117,7 @@ export const CreateMatchForm: React.FC<CreateMatchFormProps> = ({ onCreated }) =
                 </label>
 
                 <label className="space-y-1 text-sm font-semibold md:col-span-2">
-                    End Time (optional)
+                    End Time
                     <input
                         type="datetime-local"
                         value={endTime}
@@ -123,7 +130,7 @@ export const CreateMatchForm: React.FC<CreateMatchFormProps> = ({ onCreated }) =
             <div className="mt-6 flex justify-end">
                 <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !isFormValid}
                     className="px-6 py-2 bg-brand-blue text-black font-bold rounded-full border-2 border-black hover:bg-blue-200 transition disabled:opacity-50"
                 >
                     {isSubmitting ? 'Creating…' : 'Create Match'}
